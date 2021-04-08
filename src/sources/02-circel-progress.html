@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        *, *::after, *::before{
+            box-sizing: border-box;
+        }
+        .container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+        }
+
+        .right, .left {
+            position: absolute;
+            width: 100px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 100px;
+        }
+
+        .left-dynamic-circle {
+            width: 200px;
+            height: 200px;
+            border: 20px solid transparent;
+            border-radius: 50%;
+            border-left: 20px solid greenyellow;
+            border-bottom: 20px solid greenyellow;
+            top: 0;
+            left: 0;
+            transform: rotate(45deg);
+            position: absolute;
+            animation: animation-left-circle 5s linear infinite;
+        }
+
+        .right-dynamic-circle {
+            width: 200px;
+            height: 200px;
+            border: 20px solid transparent;
+            border-radius: 50%;
+            border-top: 20px solid greenyellow;
+            border-right: 20px solid greenyellow;
+            top: 0;
+            right: 0;
+            position: absolute;
+            transform: rotate(45deg);
+            animation: animation-right-circle 5s linear infinite;
+        }
+
+        @keyframes animation-left-circle {
+            0%, 50% {
+                transform: rotate(45deg);
+            }
+
+            100% {
+                transform: rotate(-135deg);
+            }
+        }
+
+        @keyframes animation-right-circle {
+            0% {
+                transform: rotate(45deg);
+            }
+
+            50%, 100% {
+                transform: rotate(-135deg);
+            }
+        }
+    </style>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="left-dynamic-circle"></div>
+        </div>
+        <div class="right">
+            <div class="right-dynamic-circle"></div>
+        </div>
+    </div>
+</body>
+</html>
