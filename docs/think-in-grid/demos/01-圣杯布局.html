@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            grid-template-areas: "title title title title title title"
+                                 "leftNav center center center center rightNav"
+                                 "footer footer footer footer footer footer";
+            grid-template-columns: repeat(6, 1fr);
+            display: grid;
+        }
+
+        header {
+            height: 64px;
+            background-color: yellowgreen;
+            grid-area: title;
+        }
+
+        .nav-left {
+            grid-area: leftNav;
+            height: calc(100vh - 64px - 64px);
+            background-color: tomato;
+        }
+
+        .nav-right {
+            grid-area: rightNav;
+            height: calc(100vh - 64px - 64px);
+            background-color: tan;
+        }
+
+        article {
+            grid-area: center;
+            height: calc(100vh - 64px - 64px);
+            background-color:violet;
+        }
+
+        footer {
+            grid-area: footer;
+            height: 64px;
+            background-color: khaki;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+        <nav class="nav-left"></nav>
+        <article></article>
+        <nav class="nav-right"></nav>
+        <footer></footer>
+    </div>
+</body>
+</html>
